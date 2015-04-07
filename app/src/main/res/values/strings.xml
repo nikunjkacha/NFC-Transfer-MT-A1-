@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NFC Transfer - Assignment 1</string>
+
+    <string name="ImgDesc">Image to be sent</string>
+    <string name="action_settings">Settings</string>
+    <string name="ImgName"></string>
+    <string name="ImgFileSize"></string>
+    <string name="Instructions">Enter Text to be sent through NFC</string>
+    <string name="SendText">Send Text</string>
+    <string name="TextToSend"></string>
+
+</resources>
