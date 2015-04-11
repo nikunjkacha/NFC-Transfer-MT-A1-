@@ -3,6 +3,7 @@
     android:layout_height="fill_parent"
     tools:context=".NFC_Transfer">
 
+
     <TabHost
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -46,7 +47,6 @@
                         android:layout_width="250dp"
                         android:layout_height="300dp"
                         android:id="@+id/imgToSend"
-                        android:background="#ffffce00"
                         android:layout_gravity="center_horizontal"
                         android:contentDescription="@android:string/no"
                         android:longClickable="false"
@@ -66,6 +66,38 @@
                         android:id="@+id/ImgFileSize"
                         android:singleLine="false"
                         android:layout_gravity="center_horizontal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:gravity="center|bottom"
+                        android:layout_weight="1">
+
+                        <ProgressBar
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="0dip"
+                            android:layout_height="20dp"
+                            android:id="@+id/progressBar"
+                            android:indeterminate="true"
+                            android:layout_weight=".7"
+                            android:layout_gravity="bottom"
+                            android:visibility="invisible"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:gravity="center|bottom"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="20dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/SendingImage"
+                            android:id="@+id/txt_SendingImage"
+                            android:layout_gravity="top"
+                            android:visibility="invisible"/>
+                    </LinearLayout>
 
                 </LinearLayout>
 

@@ -12,7 +12,11 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.text.style.TtsSpan;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -100,6 +104,12 @@ public class Send_Item extends Activity
 
             file.setReadable(true, false);
             nfcAdapter.setBeamPushUris(uriToBeam, this.activity);
+
+            ProgressBar progressBar = (ProgressBar) this.activity.findViewById(R.id.progressBar);
+            progressBar.setVisibility(View.VISIBLE);
+
+            TextView textView = (TextView) this.activity.findViewById(R.id.txt_SendingImage);
+            textView.setVisibility(View.VISIBLE);
         }
         else
         {

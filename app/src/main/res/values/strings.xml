@@ -12,5 +12,10 @@
     <string name="Title">Enter a Title for your Message</string>
     <string name="Message">Enter your Message</string>
     <string name="Save">Save Message</string>
+    <string name="SendingImage">Sending Image. Tap phones to transfer via NFC</string>
+    <string name="readTextFile">Read Text File</string>
+    <string name="title_activity_read_text_files">ReadTextFiles</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>

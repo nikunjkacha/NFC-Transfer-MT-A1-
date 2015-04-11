@@ -22,6 +22,7 @@ import java.io.File;
 public class NFC_Transfer extends ActionBarActivity
 {
     public String[] listOfFiles;
+    String fileToLoad = null;
 
     public Activity getActivity() {return this;}
 
@@ -64,7 +65,7 @@ public class NFC_Transfer extends ActionBarActivity
                 if(tabId == "Text")
                 {
                     Context c = getApplicationContext();
-                    Send_Text sendtext = new Send_Text(a, c);
+                    Send_Text sendtext = new Send_Text(a, c, "null");
                 }
             }
         });
@@ -132,7 +133,28 @@ public class NFC_Transfer extends ActionBarActivity
         {
             return true;
         }
+        else if (id == R.id.menu_readTextFile)
+        {
+            Intent intent = new Intent(this, ReadTextFiles.class);
+            startActivityForResult(intent, 0);
+        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (resultCode == RESULT_OK)
+        {
+            fileToLoad = (String) data.getExtras().getString("fileToLoad");
+
+            TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
+            tabHost.setCurrentTab(2);
+
+            Send_Text sendText = new Send_Text(this, getApplicationContext(), fileToLoad);
+        }
+
+
     }
 }
