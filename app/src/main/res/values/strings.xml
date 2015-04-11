@@ -4,9 +4,13 @@
     <string name="ImgDesc">Image to be sent</string>
     <string name="action_settings">Settings</string>
     <string name="ImgName"></string>
-    <string name="ImgFileSize"></string>
+    <string name="ImgFileSize">Please choose an Image to be sent via NFC</string>
     <string name="Instructions">Enter Text to be sent through NFC</string>
     <string name="SendText">Send Text</string>
     <string name="TextToSend"></string>
+    <string name="Send">Send</string>
+    <string name="Title">Enter a Title for your Message</string>
+    <string name="Message">Enter your Message</string>
+    <string name="Save">Save Message</string>
 
 </resources>

@@ -3,6 +3,7 @@ package com.example.mitch.nfctransfer_assignment1;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -21,6 +22,8 @@ import java.io.File;
 public class NFC_Transfer extends ActionBarActivity
 {
     public String[] listOfFiles;
+
+    public Activity getActivity() {return this;}
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -51,6 +54,20 @@ public class NFC_Transfer extends ActionBarActivity
         tabSpec.setContent(R.id.Text);
         tabSpec.setIndicator("Text");
         tabHost.addTab(tabSpec);
+
+        final Activity a = this;
+        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener()
+        {
+            @Override
+            public void onTabChanged(String tabId)
+            {
+                if(tabId == "Text")
+                {
+                    Context c = getApplicationContext();
+                    Send_Text sendtext = new Send_Text(a, c);
+                }
+            }
+        });
     }
 
     private void AddToListView()
@@ -85,8 +102,8 @@ public class NFC_Transfer extends ActionBarActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                //String itemName = parent.getItemAtPosition(position).toString();
-                Send_Item sendItem = new Send_Item(listOfFiles[position], a);
+                Context c = getApplicationContext();
+                Send_Item sendItem = new Send_Item(listOfFiles[position], a, c);
 
                 TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
                 tabHost.setCurrentTab(1);

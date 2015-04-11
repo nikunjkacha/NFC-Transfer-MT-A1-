@@ -43,8 +43,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="@android:dimen/thumbnail_width"
-                        android:layout_height="@android:dimen/thumbnail_height"
+                        android:layout_width="250dp"
+                        android:layout_height="300dp"
                         android:id="@+id/imgToSend"
                         android:background="#ffffce00"
                         android:layout_gravity="center_horizontal"
@@ -56,14 +56,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/ImgName"
-                        android:id="@+id/ImgName" />
+                        android:id="@+id/ImgName"
+                        android:layout_gravity="center_horizontal" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/ImgFileSize"
                         android:id="@+id/ImgFileSize"
-                        android:singleLine="false" />
+                        android:singleLine="false"
+                        android:layout_gravity="center_horizontal" />
 
                 </LinearLayout>
 
@@ -71,7 +73,51 @@
                     android:id="@+id/Text"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:orientation="vertical"></LinearLayout>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Title"
+                        android:id="@+id/lbl_Title" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/txt_Title" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Message"
+                        android:id="@+id/lbl_EnterMessage"
+                        android:layout_marginTop="30dp" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:ems="10"
+                        android:id="@+id/txt_Message" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|bottom">
+
+                        <Button
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:text="@string/Send"
+                            android:id="@+id/btn_Enter"
+                            android:layout_gravity="center_horizontal|bottom"/>
+
+                    </LinearLayout>
+                </LinearLayout>
             </FrameLayout>
         </LinearLayout>
     </TabHost>
